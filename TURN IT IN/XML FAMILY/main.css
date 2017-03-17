@@ -1,0 +1,36 @@
+div.displayFamily {
+	font-family: Arial, Helvetica, sans-serif;
+	/*border-radius: 25px;*/
+	border-radius: 15px 50px 30px 5px;
+	background-color: #5cd65c;
+	width: 300px;
+	display: block;
+	padding: 10pt;
+	border: 1px solid #0D3427;
+	margin: 5px;
+	text-align: left;
+}
+
+div.Name {
+	color: #0D3427;
+	font-weight: bold;
+	font-size: 140%;
+	display: block;
+	margin-bottom: 3%;
+}
+
+div.phone {
+	font-size: 90%;
+	color: #523819;
+	font-size: 90%;
+	display: block;
+}
+
+div.email {
+	color: #0D3427;
+	font-size: 90%;
+	font-weight: bold;
+	display: block;
+	margin-top: 3%;
+}
+/*(Lynda.com - from LinkedIn, 2017)*/

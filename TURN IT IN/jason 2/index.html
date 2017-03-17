@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- this it the title-->
+	<title>JSON asisgnment 3</title>
+	<!--this is calling in the css (cassading style sheet)-->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<header>
+		<!--biggest header name-->
+		<h1>Casey Info</h1>
+		<!--this is a button with an id-->
+		<button id='btn'>Get Info</button>
+ 	</header>
+	<!--div for the info to go in-->
+	<div id='Family-info'></div>
+	<!--link to the Javascript-->
+<script src='js/main.js'></script>
+	<div id="homeMap" style="width:100%;height:400px;"></div>
+<script>
+	//this is a function
+	function homeMap() {
+	var mapItem= {
+	//this is the latitude and longitude of my home town Royton
+    center:new google.maps.LatLng(53.5686,-2.12227),
+    //making sure the map is located on the town of Royton
+    zoom:15,
+	};
+	//this verible is calling the map from homeMap
+	var map=new google.maps.Map(document.getElementById("homeMap"),mapItem);
+	}
+</script>
+<!--this is the url and the api keyof the googlemap -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR3gOJVxR-SRxgNyuOuLEw0td5ixESZYM&callback=homeMap">
+</script>
+</body>
+</html>
+

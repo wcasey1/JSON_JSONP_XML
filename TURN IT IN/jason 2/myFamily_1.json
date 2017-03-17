@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Joseph",
+    "familyMember" : "Father",
+    "FamilyTree": {
+      "Position": ["Head"]
+    }
+  },
+  {
+    "name": "Nola",
+    "familyMember" : "Mother",
+    "FamilyTree": {
+      "position": ["Head"]
+    }
+  }
+  
+]

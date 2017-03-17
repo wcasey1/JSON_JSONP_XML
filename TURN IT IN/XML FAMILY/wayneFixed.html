@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Family XML</title>
+    <script type="text/javascript">
+    function familyList()
+    {
+        // gets the data for the id of xml data of my family
+				var xmlData = document.getElementById("xmldata1");
+				var myFamily = xmlData.getElementsByTagName("displayFamily");
+		
+				// every family member, it willloop over its tags and create a new <div> to
+				// each card along with the information for my family mebers
+				for (var i=0; i < myFamily.length; i++) {
+				    var currentFamily = myFamily[i]; // store a reference to the current <displayFamily>
+				    
+				    //makes a new div
+				    var newFamily = document.createElement("div");
+				    newFamily.setAttribute("className","displayFamily");
+				    newFamily.setAttribute("class","displayFamily");
+				    
+				    // 
+				    var newName = document.createElement("div");
+				    newName.setAttribute("className","Name");
+				    newName.setAttribute("class","Name");
+				    var nameStr = document.createTextNode(currentFamily.getElementsByTagName("Name")[0].firstChild.data);
+				    newName.appendChild(nameStr);
+				    newFamily.appendChild(newName);
+				    
+				    // create separate <divs> for the phones		    
+				    var phones = currentFamily.getElementsByTagName("phone");
+				    var newPhone;
+				    for (var j=0; j < phones.length; j++) {
+				        newPhone = document.createElement("div");
+		    		    newPhone.setAttribute("className","phone");
+			    	    newPhone.setAttribute("class","phone");
+			    	    var labelStr = currentFamily.getElementsByTagName("phone")[j].getAttribute("type") + ": ";
+			    	    var phoneStr = document.createTextNode(labelStr + currentFamily.getElementsByTagName("phone")[j].firstChild.data);
+			    	    newPhone.appendChild(phoneStr);
+			    	    newFamily.appendChild(newPhone);
+				    }
+				    
+				    // create a <div> for the email
+				    var newEmail = document.createElement("div");
+				    newEmail.setAttribute("className","email");
+				    newEmail.setAttribute("class","email");
+				    var emailStr = document.createTextNode("email: " + currentFamily.getElementsByTagName("email")[0].firstChild.data);
+				    newEmail.appendChild(emailStr);
+				    newFamily.appendChild(newEmail);
+		
+		            // now add the new <div> containing the card info to the web page
+				    document.getElementsByTagName("body")[0].appendChild(newFamily);
+				}
+
+    }
+    
+    window.addEventListener("load",familyList);
+    </script>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+<xml id="xmldata1" style="display:none">
+<!--XML format for my made up data-->
+	<displayFamily>
+		<Name>Joseph Casey</Name>
+		<phone type="mobile">01282 756493</phone>
+		<phone type="work">0800 473829</phone>
+		<email>Jcasey@aol.com</email>
+	</displayFamily>
+	<displayFamily>
+		<Name>Nola Casey</Name>
+		<phone type="mobile">0707 878787</phone>
+		<email>NolaC@aolcom</email>
+	</displayFamily>
+
+	<displayFamily>
+		<Name>Ian Casey</Name>
+		<phone type="mobile">0987 123456</phone>
+		<email>EdCasey@.btinternetcom</email>
+	</displayFamily>
+
+	<displayFamily>
+		<Name>Gail Casey</Name>
+		<phone type="mobile">00987 474834</phone>
+		<email>GEC@osram.com</email>
+	</displayFamily>
+
+	<displayFamily>
+		<Name>Wayne Casey</Name>
+		<phone type="mobile">00987 474834</phone>
+		<email>WayneC@aol.com</email>
+	</displayFamily>
+
+</xml>
+</body>
+</html>
+
